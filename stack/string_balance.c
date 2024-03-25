@@ -84,5 +84,7 @@ int main(){
             printf("string is not balanced.\n");
     }
 
+    free(s);
+
     return 0;
 }
