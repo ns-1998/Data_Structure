@@ -1,0 +1,50 @@
+Hash Table:
+
+-> It is a Table or kind of array which stores the data. Position at which data is going to stores
+   is calculated using "Hash Function" and "key".
+
+   Ex: Consider a hash Table or array of 10 members, Now to store any data at any index/position we 
+       use Hash Function and Key.
+       Using key and Hash Function combination we derive a index or position at which data is going 
+       to store, similar for access or remove data from that index.
+
+        user input key and data.
+        index = hashFunction(key), Now store data at this index.
+
+Disadvantage -: Many time it is happening that due to same indexing the collision occurs. 
+Advantage    -: Time complexity is constant O(1).
+
+-> There are three ways of calculating the hash function:
+
+        1. Division method.
+        2. Folding method.
+        3. Mid square method.
+
+        In the division method, the hash function can be defined as:
+            h(ki) = ki % m;
+            hashFunction(key) = key % Total size of Hash table
+        
+        Ex: if the key value is 6 and the size of the hash table is 10.
+            h(6) = 6%10 = 6
+
+-> Different Method of avoiding hashing:
+
+1. openhashing ( close addressing )
+
+--> Resolve collision by chaining i.e. when collison occurs the same index is received. so the linkedlist
+    points to next node which store this collison data.
+--> Ex: Index 5 has already data 4 but 14 also give index 5, then next pointer in linkedlist of 4 points to
+    14 so use same index.
+
+2. closehashing ( open addressing )
+
+-->In Closed hashing, three techniques are used to resolve the collision:
+
+    1) Linear probing
+    2) Quadratic probing
+    3) Double Hashing technique
+
+1) Linear probing : if collision occur the nearly next free location found that can be used to store data.
+2) Quadratic probing : In case of linear probing, searching is performed linearly. In contrast, quadratic probing is an open addressing technique that uses quadratic polynomial for searching until a empty slot is found.
+3) double probing : Double hashing is an open addressing technique which is used to avoid the collisions. When the collision occurs then this technique uses the secondary hash of the key. It uses one hash value as an index to move forward until the empty location is found.
+                Get one hash key and if collison get secondary key and using both of them derive index.
